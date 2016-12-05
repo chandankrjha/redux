@@ -1,0 +1,19 @@
+{
+  "portConfig": {
+    "dev": 1234,
+    "build": 1234
+  },
+  "buildPaths": {
+    "clean": [
+      "build/fonts",
+      "build/img",
+      "build/oauth2",
+      "build/*.js",
+      "build/*.json",
+      "build/*html",
+      "build/*.css"
+    ],
+    "assetPath": "./assets/",
+    "buildLocation": "./build/"
+  }
+}

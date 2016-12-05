@@ -1,0 +1,50 @@
+{
+  "name": "instagram-themefy",
+  "version": "0.1.0",
+  "description": "Instagram Theme Based",
+  "main": "Gruntfile.js",
+  "scripts": {
+    "test": "grunt test",
+    "postinstall": "typings install --global && bower install",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.pramati.com/chandanj/instagram-themefy/"
+  },
+  "keywords": [
+    "instagram",
+    "themes"
+  ],
+  "author": "Chandan Kumar Jha <chandankrjha.com>",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "express": "^4.14.0",
+    "express-http-proxy": "^0.10.0",
+    "fbemitter": "2.0.2",
+    "flux": "2.1.1",
+    "immutable": "3.8.1",
+    "react": "15.2.1",
+    "react-dom": "15.2.1",
+    "react-modal": "^1.5.2",
+    "react-router": "2.6.1",
+    "require": "^2.4.20",
+    "stream": "0.0.2",
+    "superagent": "^2.3.0",
+    "typescript": "^2.0.0"
+  },
+  "devDependencies": {
+    "config": "1.21.0",
+    "grunt": "1.0.1",
+    "grunt-contrib-clean": "1.0.0",
+    "grunt-contrib-copy": "1.0.0",
+    "grunt-contrib-sass": "1.0.0",
+    "grunt-contrib-watch": "1.0.0",
+    "grunt-webpack": "1.0.11",
+    "source-map-loader": "0.1.5",
+    "ts-loader": "0.8.2",
+    "typescript": "^1.8.10",
+    "webpack": "1.13.1",
+    "webpack-dev-server": "1.14.1"
+  }
+}

@@ -1,0 +1,264 @@
+@import "susy";
+@import "bourbon/bourbon";
+/* https://github.com/negomi/sassy-inputs */
+@import "sassy-inputs/main";
+@import "_fonts";
+@import "_mixins";
+
+@import "normalize/import-now";
+
+
+$susy: (
+  columns: 8,
+  gutters: .25,
+  container: 360px,
+  global-box-sizing: border-box
+);
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+body{
+  font-family: Arimo,"Helvetica Neue",Helvetica,Arial,Verdana,"Trebuchet MS";
+  min-width: 360.25px;
+  font-size: .9em;
+  line-height: 1.5em;
+  color: rgb(51,51,51);
+  min-height: 520px;
+  word-break: break-word;
+}
+
+input[type=submit],
+input[type=button],
+button {
+  @include sassy-button;
+}
+
+.row {
+  @include span(8);
+  .row-wrapper{
+    margin: 10px 20px;
+    overflow: hidden;
+  }
+
+  .media-header{
+    text-align: center;
+  }
+
+  .pointer{
+    cursor: pointer;
+    margin: 40px;
+    font-size: large;
+    color: blue;
+  }
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: .2;
+  z-index: 100;
+  display: none;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  outline: 0;
+  display: block;
+  background-color: rgb(85,85,85);
+}
+
+.auth-modal {
+  z-index: 200;
+  width: 25%;
+  position: relative;
+  top: 50vh;
+  transform: translateY(-50%);
+  margin:0 auto;
+  text-align: center;
+  padding: 50px;
+  @include item-background;
+  p {
+    font-size: 16pt;
+    padding: 4px 0px 20px;
+    margin: 0px;
+    color: rgb(128, 128, 128);
+  }
+  .button-groups {
+    padding: 15px;
+    @include set-border(1px 0, solid, rgb(211, 211, 211));
+    button {
+      margin: 0;
+      font-size: 4em;
+    }
+  }
+}
+
+.user-media{
+  @include span(4);
+  margin: auto; 
+  // padding: 1%;
+  border: 1px solid #efefef;
+  &:nth-child(even) {
+        float:left;
+      }
+
+  &::nth-child(odd){
+    float:right;
+  }
+  img.user-media-image{
+    height: auto;
+    width: auto;
+    text-align: center;
+    @include span(8);
+  }
+  
+  .user-media-info-wrapper{
+    @include span(8);
+    height: 40px;
+    overflow: hidden;
+    padding: 2%;
+    font-weight: bold;
+    .user-likes{
+      float:left;
+    }
+
+    .user-comments{
+      float:right;
+    }
+  }
+
+  .user-header-image{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+  }
+
+  header{
+    @include span(8);
+    height:64px;
+    padding: 14px 20px;
+
+    a.image-anchor{
+      margin:-1px 10px -1px -5px;
+      display:inline-block;
+    }
+    a{
+      color: #262626;
+      text-decoration: none;
+    }
+
+    .username-wrapper{
+      display: inline-block;
+      position: relative;
+      bottom: 10px;
+      font-weight: bold;
+    }
+  }
+  
+}
+
+/*********************/
+.loader {
+  font-size: 10px;
+  margin: 50px auto;
+  text-indent: -9999em;
+  width: 11em;
+  height: 11em;
+  border-radius: 50%;
+  background: #ffffff;
+  background: -moz-linear-gradient(left, #ffffff 10%, rgba(255, 255, 255, 0) 42%);
+  background: -webkit-linear-gradient(left, #ffffff 10%, rgba(255, 255, 255, 0) 42%);
+  background: -o-linear-gradient(left, #ffffff 10%, rgba(255, 255, 255, 0) 42%);
+  background: -ms-linear-gradient(left, #ffffff 10%, rgba(255, 255, 255, 0) 42%);
+  background: linear-gradient(to right, #ffffff 10%, rgba(255, 255, 255, 0) 42%);
+  position: relative;
+  -webkit-animation: load3 1.4s infinite linear;
+  animation: load3 1.4s infinite linear;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+}
+.loader:before {
+  width: 50%;
+  height: 50%;
+  background: #ffffff;
+  border-radius: 100% 0 0 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: '';
+}
+.loader:after {
+  background: #0dc5c1;
+  width: 75%;
+  height: 75%;
+  border-radius: 50%;
+  content: '';
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+@-webkit-keyframes load3 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes load3 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+/*********************/
+
+/*********************/
+.row nav{
+  overflow: hidden;
+  display:block;
+  padding: 0;
+  div.nav-wrapper{
+      position: relative;
+      top: -10px;
+      width: 100%;
+    ul.header-tabs{
+      list-style: none;
+      width:100%;
+      padding: 5px;
+      -webkit-box-align: center;
+      background-color: #fff;
+      border-bottom: 1px solid #dbdbdb;
+      li{
+        margin: 2px 5px;
+        display: inline-block;
+        text-align: center;
+        width: 24%;
+        padding: 10px;
+        font-size: 20px;
+
+        &:hover{
+          background-color:  #fafafa;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+/*********************/

@@ -1,0 +1,31 @@
+{
+  "name": "instagram-themefy",
+  "version": "0.1.0",
+  "description": "Instagram Theme Based",
+  "main": "index.html",
+  "authors": [
+    "Chandan Kumar Jha<chandankrjha.com>"
+  ],
+  "license": "Apache-2.0",
+  "keywords": [
+    "instagram",
+    "themes"
+  ],
+  "homepage": "https://gitlab.pramati.com/chandanj/instagram-themefy/",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "./build/vendor",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "react": "15.2.1",
+    "jquery": "~3.1.1"
+  },
+  "resolutions": {
+    "jquery": "~3.1.1"
+  }
+}
